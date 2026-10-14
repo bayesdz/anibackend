@@ -32,6 +32,9 @@ python -m unittest discover -s tests -v
 
 ## Прод
 1. Задеплойте `backend/` (VPS / Railway / Render). Старт: `uvicorn main:app --host 0.0.0.0 --port $PORT --proxy-headers`.
+   **Render:** Root Directory = `backend`, Build Command = `pip install --upgrade pip && pip install --prefer-binary -r requirements.txt`,
+   переменная `PYTHON_VERSION=3.12.8` (без неё Render берёт самый новый Python, для которого нет готовых колёс → бесконечная сборка).
+   Либо просто подключите репозиторий как Blueprint — настройки лежат в `render.yaml`.
 2. Обязательно задайте `SEG_SECRET`.
 3. В Vercel добавьте `VITE_BACKEND_URL=https://ваш-бэкенд` (https, без слэша) и пересоберите фронтенд.
 4. При желании ограничьте `ALLOWED_ORIGINS=https://ваш-сайт`.
