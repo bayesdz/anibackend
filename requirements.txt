@@ -1,0 +1,5 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+httpx>=0.27
+# Aniboom вынесен в AnimegoParser начиная с 1.8+; нужны get_voices / aniboom_get_stream_for_voice (есть в 1.18)
+anime-parsers-ru>=1.18.0
